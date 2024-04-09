@@ -1,10 +1,17 @@
 from pydantic import BaseModel
-from datetime import date
 
-class Festival(BaseModel):
-    name: str
-    location: str
-    startDate: date
-    endDate: date
-    province: str
-    comment: str = None
+
+#Cameron
+class Messageus(BaseModel):
+    fullname: str
+    emailaddress: str
+    subject: str
+    message: str
+
+
+#Anton
+class Subscription(BaseModel):
+    eventName: str
+    participantName: str
+    participantFirstName: str
+    eventWeek: int

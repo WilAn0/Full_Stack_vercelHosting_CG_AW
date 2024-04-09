@@ -1,6 +1,5 @@
 import mysql.connector
 import config
-
 def connect_to_database():
     try:
         connection = mysql.connector.connect(host=config.db_hostname, user=config.db_username, password=config.db_password)
@@ -16,8 +15,10 @@ def execute_sql_query(sql_query, query_parameters = None):
         cursor = connection.cursor()
         cursor.execute(sql_query, query_parameters)
         if sql_query.upper().startswith("SELECT"):
+            # executed for GET requests
             result = cursor.fetchall()
         else:
+            # executed for POST requests
             connection.commit()
             result = True
 
