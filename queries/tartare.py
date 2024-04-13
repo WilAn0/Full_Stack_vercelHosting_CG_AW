@@ -12,3 +12,5 @@ insert_message_query = 'INSERT INTO tartare.messageus (fullname, emailaddress, s
 movie_details_query = "SELECT movieName, synopsis, length, country, genre, actor1, actor2, actor3, actor4, actor5, actor6, director FROM tartare.movie  WHERE movieName = %s"
 
 movie_review_query = "SELECT movieName, review, stars FROM tartare.review WHERE movieName = %s"
+
+movie_test_query = "SELECT movieName from tartare.movie;"

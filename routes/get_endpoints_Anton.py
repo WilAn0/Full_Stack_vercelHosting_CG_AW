@@ -22,7 +22,16 @@ def get_reviews_by_movie(movie_name: str):
         reviews_to_return.append(review_dictionary)
     return {'reviews': reviews_to_return}
 
-
+@app.get("/movietest")
+def get_all_movies():
+    query = queries.movie_test_query
+    movies = database.execute_sql_query(query)
+    if isinstance(movies, Exception):
+        return movies, 500
+    movies_to_return = []
+    for movie in movies:
+        movies_to_return.append(movie[0])
+    return {'movies': movies_to_return}
 
 
 @app.get("/info/{movie_name}")
