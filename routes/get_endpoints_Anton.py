@@ -5,7 +5,7 @@ from queries import tartare as queries
 app = APIRouter()
 
 
-@app.get("/reviews/{movie_name}")
+@app.get("/reviews")
 def get_reviews_by_movie(movie_name: str):
     query = queries.movie_review_query
 
@@ -34,7 +34,7 @@ def get_all_movies():
     return {'movies': movies_to_return}
 
 
-@app.get("/info/{movie_name}")
+@app.get("/info")
 def get_reviews_by_movie(movie_name: str):
     query = queries.movie_details_query
 
