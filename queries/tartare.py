@@ -14,3 +14,5 @@ movie_details_query = "SELECT movieName, synopsis, length, country, genre, actor
 movie_review_query = "SELECT movieName, review, stars FROM tartare.review WHERE movieName = %s"
 
 movie_test_query = "SELECT movieName from tartare.movie;"
+
+insert_subscription_query = insert_festival_query = "INSERT INTO tartare.subscription (eventName, participantName, participantFirstName, eventWeek) VALUES (%s, %s, %s, %s);"
